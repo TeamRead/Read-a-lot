@@ -22,13 +22,19 @@ afterEach(() => {
 })
 
 it('should render navbar with Home and Favorites tab', () => {
+
     render(<Home />)
 
-    expect(screen.getByRole('navigation')).toHaveTextContext('Read-A-Lot', 'Favorites')
+    const homeTab = screen.getByText('Read-A-Lot')
+    const favTab = screen.getByText('Favorites')
+
+    expect(Home).toContain(homeTab, favTab)
 })
 
 it('should render 3 different book covers', async () => {
     let result;
     await act(() => result = render(<Home />))
+
+    expect(result.container.querySelectorAll('img')).toContain('bookCover')
 })
 
