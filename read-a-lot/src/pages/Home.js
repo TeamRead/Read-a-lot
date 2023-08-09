@@ -1,4 +1,3 @@
-import Nav from 'react-bootstrap/Nav';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 function Home() {

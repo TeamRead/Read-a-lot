@@ -1,5 +1,6 @@
 import * as React from "react";
 import Nav from 'react-bootstrap/Nav';
+import Home from "./pages/Home";
 // import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 
