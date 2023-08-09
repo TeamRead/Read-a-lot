@@ -13,7 +13,7 @@ function App() {
             onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
         >
             <Nav.Item>
-                <Nav.Link href="/home">Read-A-Lot</Nav.Link>
+                <Nav.Link href="/">Read-A-Lot</Nav.Link>
             </Nav.Item>
             <Nav.Item>
                 <Nav.Link href="/favorites">Favorites</Nav.Link>
