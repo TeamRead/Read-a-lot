@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
+import './index.css'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

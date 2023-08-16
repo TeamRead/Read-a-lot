@@ -1,8 +1,11 @@
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 function Home() {
+
   return (
-    <h1>Home</h1>
+  <div className="title">
+    <h1>HOME</h1>
+  </div>
   );
 }
 

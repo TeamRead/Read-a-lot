@@ -1,8 +1,9 @@
 *{
-    background-color: #ffff;
+    background-color: white;
 }
 
 .title{
+
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     display: flex;
     flex-direction: column;
@@ -11,3 +12,14 @@
     color: #fe502d
 
 }
+
+.navbar{
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    color: #fe502d
+
+}
+
