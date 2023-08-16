@@ -1,6 +1,8 @@
 function Favorites(){
     return(
-        <h1>Favorites</h1>
+    <div className="title">
+        <p>Favorites</p>
+    </div>
     )
 }
 export default Favorites;
