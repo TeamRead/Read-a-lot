@@ -1,25 +1,50 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat-Italic-VariableFont_wght.ttf')
+    format('truetype')
+  }
+  
 *{
     background-color: white;
 }
 
 .title{
 
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Montserrat';
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 50px;
-    color: #fe502d
+    font-size: 60px;
+    color: #52528c;
+    margin-top: 20px;
+    text-shadow: 2px 2px 2px #231123;
 
 }
 
 .navbar{
 
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Montserrat';
     display: flex;
     flex-direction: row;
-    font-size: 30px;
-    color: #fe502d
+    font-size: 20px;
 
+}
+
+.homeTab{
+    background: #372554;
+    width: 250px;
+    padding: 10px;
+    text-align: center;
+    color:#004aad;
+    margin-top: 10px;
+}
+
+.favTab{
+    background: #52528c;
+    width: 250px;
+    padding: 10px;
+    text-align: center;
+    color:#004aad;
+    margin-top: 10px;
 }
 
