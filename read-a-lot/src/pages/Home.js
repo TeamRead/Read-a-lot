@@ -1,17 +1,19 @@
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import {useEffect, useState} from "react";
+import {useEffect, useState, useContext} from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
+import { FavoritesContext } from '../FavoritesProvider';
 
 function Home() {
     const [subjectData, setSubjectData] = useState([]);
     const [randomBooks, setRandomBooks] = useState([]);
+    const { addFavorite } = useContext(FavoritesContext);
     
     async function fetchBooks() {
-      const response = await fetch(`http://openlibrary.org/subjects/love.json`);
+      const response = await fetch(`https://openlibrary.org/subjects/love.json`);
       const subData = await response.json();
       setSubjectData(subData.works || []);
     }
@@ -63,7 +65,7 @@ function Home() {
                   <p className="card-text">
                     {book.authors ? book.authors.map(author => author.name).join(', ') : 'Unknown Author'}
                   </p>
-                  <button>
+                  <button onClick={() => addFavorite(book)}>
                     Add to My Library
                   </button>
                 </div>

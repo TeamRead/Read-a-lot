@@ -7,6 +7,7 @@ function FavoritesProvider({ children }) {
 
   function addFavorite(favorite) {
     setFavorites([...favorites, favorite]);
+    console.log('Favorite added!')
   }
 
 

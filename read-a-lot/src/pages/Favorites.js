@@ -9,10 +9,12 @@ function Favorites() {
 
   return (
     <Container>
+        <div className="title">
       <h1>My Favorites</h1>
+      </div>
       <Row>
         {favorites.map((book, index) => (
-          <Col key={index} xs={12} md={4} lg={3} className="mb-4">
+          <Col key={index}>
             <div className="card">
               <div className="card-body">
                 <h5 className="card-title">{book.title}</h5>

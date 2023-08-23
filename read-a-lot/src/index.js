@@ -8,6 +8,7 @@ import {
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import './index.css'
+import { FavoritesProvider } from './FavoritesProvider';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -23,8 +24,10 @@ const router = createBrowserRouter([
     ])
 root.render(
   <React.StrictMode>
+    <FavoritesProvider>
       <App />
       <RouterProvider router={router}/>
+      </FavoritesProvider>
   </React.StrictMode>
 );
 
