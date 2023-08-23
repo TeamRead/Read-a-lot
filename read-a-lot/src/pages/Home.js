@@ -63,9 +63,9 @@ function Home() {
                   <p className="card-text">
                     {book.authors ? book.authors.map(author => author.name).join(', ') : 'Unknown Author'}
                   </p>
-                  <a href="#" className="btn btn-primary">
+                  <button>
                     Add to My Library
-                  </a>
+                  </button>
                 </div>
               </div>
             </Col>
