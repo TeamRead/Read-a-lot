@@ -6,6 +6,7 @@ import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import { FavoritesContext } from '../FavoritesProvider';
+import {Button} from "react-bootstrap";
 
 function Home() {
     const [subjectData, setSubjectData] = useState([]);
@@ -110,9 +111,9 @@ function Home() {
                   <p className="card-text">
                     {book.authors ? book.authors.map(author => author.name).join(', ') : 'Unknown Author'}
                   </p>
-                  <button onClick={()=> addToFavoritesRefresh(book.title)}>
+                  <Button onClick={()=> addToFavoritesRefresh(book.title)}>
                     Add to My Library
-                  </button>
+                  </Button>
                 </div>
               </div>
             </Col>
