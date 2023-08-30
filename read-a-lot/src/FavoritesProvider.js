@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react';
 
-const FavoritesContext = createContext();
+export const FavoritesContext = createContext(null);
 
 function FavoritesProvider({ children }) {
   const [favorites, setFavorites] = useState([]);
@@ -18,4 +18,4 @@ function FavoritesProvider({ children }) {
   );
 }
 
-export { FavoritesProvider, FavoritesContext };
+export { FavoritesProvider};

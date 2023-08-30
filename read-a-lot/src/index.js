@@ -23,12 +23,12 @@ const router = createBrowserRouter([
     }
     ])
 root.render(
-  <React.StrictMode>
+
     <FavoritesProvider>
       <App />
       <RouterProvider router={router}/>
       </FavoritesProvider>
-  </React.StrictMode>
+
 );
 
 

@@ -14,6 +14,8 @@ function Home() {
     const { addFavorite } = useContext(FavoritesContext);
     const [refreshSameBooks, setrEfreshSameBooks] = useState([]);
     const [newRandomBooks, setNewRandomBooks] = useState([]);
+    const [dropDownValue, setDropDownValue] = useState("")
+    let favorites = []
     
     async function fetchBooks() {
       const response = await fetch(`https://openlibrary.org/subjects/love.json`);
@@ -21,6 +23,12 @@ function Home() {
         console.log(subData.works)
       setSubjectData(subData.works || []);
     }
+    // async function fetchBooks() {
+    //     const response = await fetch(`https://openlibrary.org/subjects/love.json`);
+    //     const subData = await response.json();
+    //     console.log(subData.works)
+    //     setSubjectData(subData.works || []);
+    // }
   
     useEffect(() => {
       fetchBooks();
@@ -41,6 +49,23 @@ function Home() {
     }, [subjectData]);
 
     function addToFavoritesRefresh(bookName){
+
+        let favoriteBooks = JSON.parse(localStorage.getItem("favoriteBooks"));
+        if(favoriteBooks != null){
+            favoriteBooks = JSON.parse(localStorage.getItem("favoriteBooks"));
+            favorites.push(bookName)
+            console.log(favorites)
+            for (let i =0; i < favoriteBooks.length; ++i){
+                favorites.push(favoriteBooks[i]);
+            }
+
+            localStorage.setItem("favoriteBooks", JSON.stringify(favorites))
+        }else {
+            localStorage.setItem("favoriteBooks", JSON.stringify(favorites))
+        }
+
+        console.log(favorites)
+
         for(let i =0; i < randomBooks.length; ++i){
             if(bookName !== randomBooks[i].title){
                 refreshSameBooks.push(randomBooks[i].title)
@@ -81,7 +106,8 @@ function Home() {
         console.log(randomBooks)
 
     }
-  
+
+    console.log(randomBooks)
 
   return (
   <>
@@ -91,9 +117,9 @@ function Home() {
       </div>
 
       <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Romance</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Horror</Dropdown.Item>
+        <Dropdown.Item onClick={()=>setDropDownValue("action")} href="#/action-1">Action</Dropdown.Item>
+        <Dropdown.Item onClick={()=>setDropDownValue("romance")} href="#/action-2">Romance</Dropdown.Item>
+        <Dropdown.Item onClick={()=>setDropDownValue("horror")} href="#/action-3">Horror</Dropdown.Item>
       </DropdownButton>
 
       <Container>
